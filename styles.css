@@ -1,0 +1,282 @@
+/* リセットとベーススタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ヘッダー */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    font-weight: 300;
+}
+
+/* メインコンテンツ */
+main {
+    flex: 1;
+}
+
+.converter-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #495057;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* 入力グループ */
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+input[type="number"]::placeholder {
+    color: #adb5bd;
+}
+
+/* セレクトボックス */
+.era-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    margin-bottom: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+.era-select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.era-select option {
+    padding: 0.5rem;
+}
+
+/* ボタン */
+.convert-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.convert-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
+}
+
+.convert-btn:active {
+    transform: translateY(0);
+}
+
+/* 結果表示 */
+.result {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid #007bff;
+    margin-top: 1rem;
+}
+
+.result-text {
+    font-size: 1.1rem;
+    color: #495057;
+    margin: 0;
+}
+
+.result.success {
+    border-left-color: #28a745;
+    background: #f8fff9;
+}
+
+.result.error {
+    border-left-color: #dc3545;
+    background: #fff8f8;
+}
+
+/* 使用方法 */
+.instructions {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+}
+
+.instructions h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #495057;
+    margin-bottom: 1rem;
+}
+
+.instructions ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.instructions li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f3f4;
+    color: #6c757d;
+}
+
+.instructions li:last-child {
+    border-bottom: none;
+}
+
+.instructions strong {
+    color: #495057;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e9ecef;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .converter-section {
+        padding: 1.5rem;
+    }
+    
+    .convert-btn {
+        padding: 0.875rem 1.5rem;
+    }
+    
+    /* スマホでのタッチ操作を最適化 */
+    input[type="number"], .era-select {
+        font-size: 16px; /* iOSでズームを防ぐ */
+        padding: 1rem 0.75rem; /* タップしやすいサイズ */
+    }
+    
+    .convert-btn {
+        font-size: 16px; /* iOSでズームを防ぐ */
+        min-height: 44px; /* タップしやすい最小サイズ */
+    }
+    
+    /* スマホでの結果表示を改善 */
+    .result {
+        padding: 1.25rem;
+        margin-top: 1.5rem;
+    }
+    
+    .result-text {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    /* スマホでの説明文を改善 */
+    .instructions {
+        padding: 1.5rem;
+    }
+    
+    .instructions li {
+        padding: 0.75rem 0;
+        font-size: 0.95rem;
+    }
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result {
+    animation: fadeIn 0.3s ease-out;
+} 

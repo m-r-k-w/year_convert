@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>和暦・西暦変換ツール</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>和暦・西暦変換ツール</h1>
+            <p class="subtitle">簡単に和暦と西暦を相互変換できます</p>
+        </header>
+
+        <main>
+            <!-- 西暦から和暦への変換 -->
+            <section class="converter-section">
+                <h2>西暦 → 和暦</h2>
+                <div class="input-group">
+                    <label for="western-year">西暦（4桁の数字）</label>
+                    <input 
+                        type="number" 
+                        id="western-year" 
+                        placeholder="例: 2024"
+                        min="1868"
+                        max="9999"
+                        maxlength="4"
+                    >
+                    <button id="convert-to-japanese" class="convert-btn">和暦変換</button>
+                </div>
+                <div class="result" id="western-result">
+                    <p class="result-text">結果がここに表示されます</p>
+                </div>
+            </section>
+
+            <!-- 和暦から西暦への変換 -->
+            <section class="converter-section">
+                <h2>和暦 → 西暦</h2>
+                <div class="input-group">
+                    <label for="japanese-era">元号</label>
+                    <select id="japanese-era" class="era-select">
+                        <option value="">元号を選択してください</option>
+                        <option value="令和">令和</option>
+                        <option value="平成">平成</option>
+                        <option value="昭和">昭和</option>
+                        <option value="大正">大正</option>
+                        <option value="明治">明治</option>
+                    </select>
+                    <label for="japanese-year">和暦（最大2桁の数字）</label>
+                    <input 
+                        type="number" 
+                        id="japanese-year" 
+                        placeholder="例: 6"
+                        min="1"
+                        max="99"
+                        maxlength="2"
+                    >
+                    <button id="convert-to-western" class="convert-btn">西暦変換</button>
+                </div>
+                <div class="result" id="japanese-result">
+                    <p class="result-text">結果がここに表示されます</p>
+                </div>
+            </section>
+
+            <!-- 使用方法の説明 -->
+            <section class="instructions">
+                <h3>使用方法</h3>
+                <ul>
+                    <li><strong>西暦から和暦へ:</strong> 4桁の西暦を入力して「和暦変換」ボタンを押してください</li>
+                    <li><strong>和暦から西暦へ:</strong> 元号を選択して和暦の年数を入力し、「西暦変換」ボタンを押してください</li>
+                    <li>対応期間: 明治元年（1868年）以降</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 和暦・西暦変換ツール</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
