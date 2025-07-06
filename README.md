@@ -26,10 +26,16 @@
 
 ```
 year_convert/
-├── index.html      # メインのHTMLファイル
-├── styles.css      # スタイルシート
-├── script.js       # JavaScriptロジック
-└── README.md       # このファイル
+├── index.html          # メインのHTMLファイル
+├── styles.css          # スタイルシート
+├── script.js           # JavaScriptロジック
+├── package.json        # プロジェクト設定
+├── generate-ogp.js     # OGP画像生成スクリプト
+├── images/
+│   ├── ogp-image.html  # OGP画像用HTML
+│   ├── ogp-image.png   # 生成されるOGP画像
+│   └── favicon.svg     # ファビコン
+└── README.md           # このファイル
 ```
 
 ## 技術仕様
@@ -62,6 +68,17 @@ year_convert/
 1. ファイルをダウンロード
 2. `index.html`をブラウザで開く
 3. 変換ツールが使用可能
+
+## OGP画像の生成
+
+SNSでシェアした時に表示されるOGP画像を生成するには：
+
+```bash
+npm install
+npm run generate-ogp
+```
+
+これで `images/ogp-image.png` が生成されます。
 
 ## ライセンス
 

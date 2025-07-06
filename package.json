@@ -1,0 +1,16 @@
+{
+  "name": "wareki-converter",
+  "version": "1.0.0",
+  "description": "和暦・西暦変換ツール",
+  "main": "index.html",
+  "scripts": {
+    "generate-ogp": "node generate-ogp.js",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": ["和暦", "西暦", "変換", "ツール"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer": "^21.0.0"
+  }
+} 
